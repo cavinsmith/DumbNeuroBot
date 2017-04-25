@@ -1,0 +1,21 @@
+{
+  "name": "dumb-neuro-bot",
+  "version": "1.0.0",
+  "description": "dumb NeutoBot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --use_strict ./bin/start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:onequest/quest.git"
+  },
+  "author": "Jehy <npm@jehy.ru>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/onequest/quest#readme",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "colors": "^1.1.2",
+    "fs-promise": "^2.0.0"
+  }
+}
