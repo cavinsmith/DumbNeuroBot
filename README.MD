@@ -5,7 +5,7 @@ Dymb Neuro bot
 Установка
 ---------
 
-Требуется питон 3 и [tensorflow](https://www.tensorflow.org/install/install_linux):
+Требуется питон 2.* и [tensorflow](https://www.tensorflow.org/install/install_linux):
 ```bash
 pip install tensorflow
 ```
