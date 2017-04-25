@@ -1,6 +1,6 @@
-Dymb Neuro bot
+Dumb Neuro bot
 ==================
-Бот для тупых нейронных сетей
+Бот для тупых нейронных сетей на основе [word-rnn-tensorflow](https://github.com/hunkim/word-rnn-tensorflow).
 
 Установка
 ---------
