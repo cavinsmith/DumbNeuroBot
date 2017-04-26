@@ -14,6 +14,8 @@ pip install tensorflow
 Всё как в https://github.com/hunkim/word-rnn-tensorflow без изменений - положить в `some_dir` 
 файл input.txt в формате txt (внезапно!)
 
+Затем перейти в директорию `neuro`, где лежит сама нейросеть.
+
 Затем
 ```bash
 python train.py --data_dir some_dir
