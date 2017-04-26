@@ -12,6 +12,14 @@ var QuestBot = function (bot, config) {
     console.log("Webhook error: " + error.code);  // => 'EPARSE'
   });
   bot.on('message', function (msg) {
+    let finished = false;
+
+    const sendTyping = ()=> {
+      if (!finished) {
+        bot.sendChatAction(chatId, 'typing');
+        setTimeout(sendTyping, 3000);
+      }
+    };
     console.log(msg);
     var chatId = msg.chat.id;
     let text = " ";
@@ -19,8 +27,9 @@ var QuestBot = function (bot, config) {
       text = msg.text.replace(/['"]+/g, '');
       text = text.replace(/\n+/g, ' ');
     }
-    bot.sendChatAction(chatId, 'typing');
+    sendTyping();
     childProcess.exec('cd neuro && python sample.py --prime "' + text + '" -n 50', null, (error, stdout, stderr)=> {
+      finished = true;
       if (stdout.toString().length > 0) {
         let data = stdout.trim();
         data = data.substr(data.lastIndexOf("\n"));
