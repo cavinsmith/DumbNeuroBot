@@ -24,7 +24,7 @@ var QuestBot = function (bot, config) {
       if (stdout.toString().length > 0) {
         let data = stdout.trim();
         data = data.substr(data.lastIndexOf("\n"));
-        let minLen = [data.indexOf('.', 20), data.indexOf('?', 20), data.indexOf('!', 20)];
+        let minLen = [data.indexOf('.', text.length + 1), data.indexOf('?', text.length + 1), data.indexOf('!', text.length + 1)];
         minLen = minLen.filter((val)=> {
           return val !== -1;
         });
