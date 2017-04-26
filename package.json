@@ -8,14 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org:onequest/quest.git"
+    "url": "git@github.com:jehy/DumbNeuroBot.git"
   },
   "author": "Jehy <npm@jehy.ru>",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/onequest/quest#readme",
+  "homepage": "https://github.com/jehy/DumbNeuroBot",
   "dependencies": {
-    "bluebird": "^3.4.7",
+    "bluebird": "^3.5.0",
     "colors": "^1.1.2",
-    "fs-promise": "^2.0.0"
+    "node-telegram-bot-api": "^0.27.0",
+    "fs-promise": "^2.0.2"
   }
 }

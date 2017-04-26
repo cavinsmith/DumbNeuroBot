@@ -11,14 +11,12 @@ pip install tensorflow
 ```
 Обучение
 --------
-Всё как в https://github.com/hunkim/word-rnn-tensorflow без изменений - положить в `neuro\data\tinyshakespeare` 
+Всё как в https://github.com/hunkim/word-rnn-tensorflow без изменений - положить в `some_dir` 
 файл input.txt в формате txt (внезапно!)
 
-Затем:
-
-To train with default parameters on the tinyshakespeare corpus, run:
+Затем
 ```bash
-python train.py
+python train.py --data_dir some_dir
 ```
 To sample from a trained model
 ```bash
@@ -28,6 +26,6 @@ To pick using beam search, use the --pick parameter. Beam search can be further 
 ```bash
 python sample.py --pick 2 --width 4
 ```
-Настройка
+Настройка бота
 ---------
-В config.json прописать токен для телеграмма
+Скопировать `config.json` из `config.sample.json`, в `config.json` прописать токен для телеграмма.
