@@ -1,7 +1,13 @@
 "use strict";
+const config          = require("../config/config.json");
 
-var TelegramBot = require('node-telegram-bot-api'),
-    config      = require("../config/config.json"),
-    bot         = new TelegramBot(config.telegram.token, {polling: true}),
-    QuestBot    = require('../dumbBot'),
-    questBot    = new QuestBot(bot, config);
+const TelegramBotApi  = require('node-telegram-bot-api'),
+      SlackBotApi     = require('slackbots'),
+      DumbBot         = require('../dumbBot'),
+      SlackBot        = require('../SlackBot');
+
+const telegramBotInstance = new TelegramBotApi(config.telegram.token, {polling: true}),
+      slackBotInstance = new SlackBotApi({token: config.slack.token, name: config.slack.name});
+
+const bot1 = new DumbBot(telegramBotInstance, config),
+      bot2 = new SlackBot(slackBotInstance, config);

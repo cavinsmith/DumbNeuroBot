@@ -4,6 +4,31 @@ var processText = require('./neuro').processText;
 
 module.exports = function (bot, config) {
 
+  bot.on('message', function(msg) {
+    // all ingoing events https://api.slack.com/rtm
+    var finished = false;
+    if (msg.type !== 'message' || !!msg.bot_id) {
+      return;
+    } else if( msg.type === 'message') {
+      console.log(msg);
+    }
+    const text = msg.text,
+          chatId = msg.channel;
+
+
+    console.log(chatId + ': ' + text);
+
+    processText(text)
+      .then( (data) => {
+        finished = true;
+        console.log("sending to " + chatId + ":" + data);
+        bot.postMessage(chatId, data);
+      })
+
+
+  });
+
+/*
   bot.on('polling_error', (error) => {
     console.log("Polling error: " + error.code + error);  // => 'EFATAL'
   });
@@ -36,4 +61,5 @@ module.exports = function (bot, config) {
 
 
   });
+  */
 };

@@ -1,5 +1,9 @@
 {
   "telegram": {
     "token": "YOUR_TELEGRAM_BOT_TOKEN"
+  },
+  "slack" : {
+    "token": "YOUR_SLACK_BOT_TOKEN",
+    "name": "Funnybot"
   }
 }
